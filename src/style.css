@@ -1,0 +1,16 @@
+body {
+  background-color: whitesmoke;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.My-App {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/137/987/original/81d1d922-7633-4c92-8e49-282c9fd41c49.jpeg?1723098683");
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 600px;
+  margin: 45px auto;
+  padding: 30px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  border-radius: 16px;
+}
