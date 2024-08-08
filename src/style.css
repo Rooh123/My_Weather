@@ -1,8 +1,11 @@
 body {
-  background-color: whitesmoke;
+  background-color: rgb(255, 255, 255);
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: normal;
+  //background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/138/014/original/-%E2%98%86-C_l_o_u_d-%E2%98%86-.jpeg?1723113443");
+  background-repeat: no-repeat;
+  background-size: cover;
   header {
     border-bottom: 1px solid #f9f7fe;
     padding: 0 0 30px 0;
@@ -13,16 +16,18 @@ body {
   main {
     padding: 30px 0;
   }
+  img{
+    width: 30px;
+  }
 }
 .My-App {
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/137/987/original/81d1d922-7633-4c92-8e49-282c9fd41c49.jpeg?1723098683");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/138/014/original/-%E2%98%86-C_l_o_u_d-%E2%98%86-.jpeg?1723113443");
   max-width: 600px;
   margin: 45px auto;
   padding: 30px;
-  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  box-shadow: 0 30px 50px rgba(228, 225, 235, 0.08);
   border-radius: 16px;
+  color: white;
 }
 .search-form-input {
   background-color: #f9f7fe;
@@ -50,10 +55,11 @@ body {
   margin: 0;
   font-size: 38px;
   line-height: 48px;
+  color: #f9f7fe;
 }
 .weather-app-details {
   font-size: 16px;
-  color: rgba(39, 33, 66, 0.4);
+  color: rgb(255, 255, 255);
   line-height: 24px;
   font-weight: 500;
 }
@@ -75,13 +81,15 @@ body {
 .weather-app-icon {
   position: relative;
   top: 11px;
-  font-size: 48px;
+  font-size: 58px;
   margin-right: 10px;
+  
+  
 }
 footer {
   border-top: 1px solid #f9f7fe;
   padding: 30px 0 0 0;
   text-align: center;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgb(255, 255, 255);
 }
