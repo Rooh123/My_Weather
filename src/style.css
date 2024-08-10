@@ -3,8 +3,6 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: normal;
-  //background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/138/014/original/-%E2%98%86-C_l_o_u_d-%E2%98%86-.jpeg?1723113443");
-  background-repeat: no-repeat;
   background-size: cover;
   header {
     border-bottom: 1px solid #f9f7fe;
@@ -16,13 +14,13 @@ body {
   main {
     padding: 30px 0;
   }
-  img{
+  img {
     width: 30px;
   }
 }
 .My-App {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/138/014/original/-%E2%98%86-C_l_o_u_d-%E2%98%86-.jpeg?1723113443");
-  max-width: 600px;
+  width: 600px;
   margin: 45px auto;
   padding: 30px;
   box-shadow: 0 30px 50px rgba(228, 225, 235, 0.071);
@@ -39,7 +37,7 @@ body {
 }
 
 .search-form-button {
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.616);
   padding: 15px 30px;
   border: none;
   font-size: 16px;
@@ -80,11 +78,11 @@ body {
 }
 .weather-app-icon {
   position: relative;
-  top: 11px;
-  font-size: 58px;
+  top: -20px;
+  width: 120px;
+  height: 120;
+
   margin-right: 10px;
-  
-  
 }
 footer {
   border-top: 1px solid #f9f7fe;
