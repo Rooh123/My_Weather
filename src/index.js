@@ -17,6 +17,22 @@ function resetWeather(response) {
   timeElement.innerHTML = formatedDate(date);
 }
 
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thr", "Fri", "Sat", "Sun"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      ` <div class="weather-forecast-day">
+        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-icon"> ⛅ </div>
+        <div class="weather-forecast-temperature">15° 9°</div>
+        </div>`;
+  });
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 function formatedDate(date) {
   let minute = date.getMinutes();
   let hours = date.getHours();
@@ -54,3 +70,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", runSearch);
 
 searchCity("Kabul");
+displayForecast();
