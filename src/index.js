@@ -15,9 +15,12 @@ function resetWeather(response) {
   let date = new Date(response.data.time * 1000);
   let timeElement = document.querySelector("#time");
   timeElement.innerHTML = formatedDate(date);
+
+  getForecast(response.data.city);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data)
   let days = ["Tue", "Wed", "Thr", "Fri", "Sat", "Sun"];
   let forecastHtml = "";
   days.forEach(function (day) {
@@ -66,8 +69,15 @@ function runSearch(event) {
   searchCity(searchInput.value);
 }
 
+function getForecast (city){
+apiKey = "974569437050o2aa8t3b74db826af365";
+apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+axios(apiUrl).then(displayForecast);
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", runSearch);
 
 searchCity("Kabul");
-displayForecast();
+
+
