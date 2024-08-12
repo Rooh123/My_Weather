@@ -19,18 +19,34 @@ function resetWeather(response) {
   getForecast(response.data.city);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 function displayForecast(response) {
-  console.log(response.data)
-  let days = ["Tue", "Wed", "Thr", "Fri", "Sat", "Sun"];
   let forecastHtml = "";
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      ` <div class="weather-forecast-day">
-        <div class="weather-forecast-date">${day}</div>
-        <div class="weather-forecast-icon"> ⛅ </div>
-        <div class="weather-forecast-temperature">15° 9°</div>
-        </div>`;
+
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
+      <div class="weather-forecast-day">
+        <div class="weather-forecast-date">${formatDay(day.time)}</div>
+
+        <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
+        <div class="weather-forecast-temperatures">
+          <div class="weather-forecast-temperature">
+            <strong>${Math.round(
+              day.temperature.maximum
+            )}º</strong>${Math.round(day.temperature.minimum)}º</div>
+        </div>
+      </div>
+    `;
+    }
   });
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
@@ -69,15 +85,15 @@ function runSearch(event) {
   searchCity(searchInput.value);
 }
 
-function getForecast (city){
-apiKey = "974569437050o2aa8t3b74db826af365";
-apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-axios(apiUrl).then(displayForecast);
+function getForecast(city) {
+  apiKey = "974569437050o2aa8t3b74db826af365";
+  apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+
+  axios(apiUrl).then(displayForecast);
 }
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", runSearch);
 
 searchCity("Kabul");
-
 
